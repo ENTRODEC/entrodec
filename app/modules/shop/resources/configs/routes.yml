@@ -1,0 +1,9 @@
+routes:
+    home:
+        namespace: /home
+        endpoints:
+            - { path: '/view/{{id}}(.*)', service: cool.service, parameters: {id: '[0-9]+'} }
+    root:
+        namespace: /
+        endpoints:
+            - { path: '/favicon.ico', service: cool.service}

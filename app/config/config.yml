@@ -1,0 +1,7 @@
+parameters:
+    locale: en
+
+imports:
+  # format is file/path.yaml - if the file in the same python module/folder
+  # format is @app_name:file/path.yaml - if the file in other python module/folder
+  - { resource: '@app.modules.shop:/resources/configs/config.yml' }

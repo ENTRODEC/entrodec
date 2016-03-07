@@ -1,0 +1,27 @@
+services:
+    cool.service:
+        module: app.modules.shop.services.test
+        #class: test_class
+        function: test
+        arguments: {name: "Dmitri Mes'hin", value: "@SERVICE://another.service"}
+
+    another.service:
+        module: app.modules.shop.services.test2
+        function: test2
+        arguments:
+            - '@CONFIG://locale'
+            - '@SERVICE://service3'
+
+    service3:
+        module: app.modules.shop.services.test3
+        class: test3class
+        arguments: {some: object}
+        calls:
+            - [testmethod, 'test param', 'test param2']
+            - [testmethod, 'test param3', 'test param4']
+            - [set_alchemy, '@SERVICE://sqlalchemy']
+
+    sqlalchemy:
+        module: sqlalchemy
+        function: create_engine
+        constructor: false

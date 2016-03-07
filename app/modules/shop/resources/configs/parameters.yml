@@ -1,0 +1,6 @@
+parameters:
+    locale: 'ru_RU'
+    some:
+        sub:
+            param: ['Hello', 'world!']
+

@@ -1,0 +1,10 @@
+parameters:
+    locale: ru_RU
+
+imports:
+  - {resource: 'parameters.yml'}
+  - {resource: 'routes.yml'}
+  - {resource: 'services.yml'}
+
+subparam: '%some.sub.param%'
+locale: '%locale%'
